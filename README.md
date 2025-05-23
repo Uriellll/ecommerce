@@ -5,7 +5,7 @@ It has a backend and frontend so They runs in differents ports, Front end in  ht
 Note: To runs the backend with node js, You must create an account in stripe and get the private keys (Publishable key and Secret key) to replace them in files server.js and checkout.js.
 Also you need to create the environments in frontend with ng g environment and create the const `stripeApiKey` with the value of Publishable key that you got in your stripe account and const `serverUrl` with the value http://localhost:4242
 With this instructions, yo won´t have any trouble to run the project
-
+Find more information about the server in node js in the official doc of stripe https://docs.stripe.com/checkout/embedded/quickstart
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
