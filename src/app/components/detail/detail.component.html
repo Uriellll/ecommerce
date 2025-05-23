@@ -1,0 +1,31 @@
+<div class="card mb-3" *ngIf="product">
+  <div class="row g-0">
+    <div class="col-md-4" style="display: flex; justify-content: center">
+      <img
+        [src]="product.image"
+        class="img-fluid rounded-start"
+        alt="..."
+        width="300px"
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <span class="text-secondary">{{ product.category }}</span>
+        <h5 class="card-title">{{ product.title }}</h5>
+        <span class="text-secondary">{{ product.rating.count }} reviews</span>
+        <div class="star-rating">
+          <ng-container *ngFor="let star of fullStars">&#9733;</ng-container>
+          <!-- estrella media -->
+          <ng-container *ngFor="let star of emptyStars">&#9734;</ng-container>
+          <!-- estrellas vacías -->
+        </div>
+        <p class="card-text">{{ product.description }}</p>
+        <strong>{{ product.price | currency }}</strong>
+        <input type="number"  [(ngModel)]="product.qty" class="form-control qty" placeholder="Qty" min="1">
+        <button style="display: block" class="btn btn-primary mt-2" (click)="addCart(product)">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

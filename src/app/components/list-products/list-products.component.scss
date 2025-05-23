@@ -1,0 +1,18 @@
+.container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+    margin: 5px;
+}
+.card-foo{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.qty{
+    margin-top: 5px;
+    width: 120px;
+}

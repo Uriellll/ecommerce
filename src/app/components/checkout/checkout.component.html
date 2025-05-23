@@ -1,0 +1,29 @@
+<h2 class="text-center">Checkout Page</h2>
+<h4 class="text-center my-5" *ngIf="!products.length">Cart is empty</h4>
+<div *ngIf="products.length">
+<div class="buttons">
+    <button class="btn btn-primary" (click)="cleanAll()">Clean all</button>
+</div>
+<table class="table  table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products">
+        <td>{{item.title}}</td>
+        <td>{{item.qty}}</td>
+        <td>{{item.price | currency}}</td>
+        <td><button class="btn btn-primary" (click)="removeItem(item.id)">X</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <div class="buttons">
+    <button class="btn btn-primary" (click)="onProceedToPay()">Pay</button>
+</div>
+</div>
